@@ -136,7 +136,7 @@ class SinglePlayerSupermarketEnv(gym.Wrapper):
     def step(self, player_action):
         done = False
         i, player_action, arg = player_action
-        if self.stochastic ==  True:
+        if self.env.stochastic ==  True:
             player_action = self.get_stochastic_action(player_action)
         if player_action in MOVEMENT_ACTIONS:
             self.unwrapped.game.player_move(i, player_action)
